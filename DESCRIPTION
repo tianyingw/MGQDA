@@ -4,7 +4,7 @@ Title: Multi-Group Quadratic Discriminant Analysis
 Version: 0.0.0.9000
 Date: 2024-06-01
 Author: Yuchao Wang
-Maintainer: Yuchao Wang <yuchaowang329@gmail.com>
+Maintainer: Yuchao Wang <yuchaowang329@gmail.com>; Tianying Wang <Tianying.Wang@colostate.edu>
 Description: This package provides tools for performing multi-group quadratic discriminant analysis, allowing for classification across multiple groups with improved accuracy and robustness.
 Imports: MASS, stats, RcppArmadillo, Rcpp
 License: GPL-2
