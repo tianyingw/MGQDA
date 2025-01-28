@@ -3,13 +3,11 @@ Type: Package
 Title: Multi-Group Quadratic Discriminant Analysis
 Version: 0.0.0.9000
 Date: 2024-06-01
-Authors@R: 
-    person("Yuchao", "Wang", , "yuchoawng329@gmail.com", role = c("aut", "cre"),
-           comment = c(ORCID = "0009-0007-4572-2153"))
+Author: Yuchao Wang
+Maintainer: Yuchao Wang <yuchaowang329@gmail.com>
 Description: This package provides tools for performing multi-group quadratic discriminant analysis, allowing for classification across multiple groups with improved accuracy and robustness.
-Imports: MASS, stats
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Imports: MASS, stats, RcppArmadillo, Rcpp
+License: GPL-2
 Encoding: UTF-8
-Roxygen: list(markdown = TRUE)
+LazyData: true
 RoxygenNote: 7.3.1
