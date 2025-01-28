@@ -1,3 +1,37 @@
+#' Apply MGQDA Function
+#'
+#' Apply the MGQDA algorithm using the given parameters to obtain the corresponding penalty and error rate.
+#'
+#' @param Xtrain An n1 by p matrix representing the training set, where n1 is the number of samples, and p is the number of features.
+#'
+#' @param Ytrain A numeric vector of length n1, representing the group to which each sample in the training set belongs.
+#'
+#' @param Xtest An n2 by p matrix representing the test set, where n2 is the number of samples, and p is the number of features.
+#'
+#' @param Ytest A numeric vector of length n2, representing the group to which each sample in the test set belongs. (Optional)
+#'
+#' @param alpha The penalty coefficient alpha.
+#'
+#' @param lambda_seq A sequence of lambda values for cross-validation, used to select an appropriate lambda.
+#'
+#' @param n_lambda The length of the lambda sequence.
+#'
+#' @param maxmin_ratio The ratio between the minimum and maximum values in the lambda sequence. By default, an equal ratio sequence is generated.
+#'
+#' @param nfolds The number of folds to use for cross-validation.
+#'
+#' @param eps The tolerance level for iterative convergence.
+#'
+#' @param maxiter The maximum number of iterations allowed.
+#'
+#' @param myseed The random seed used for reproducibility.
+#'
+#' @param prior Logical; if TRUE, uses prior probabilities.
+#'
+#' Apply_MGQDA(Xtrain, Ytrain, Xtest, Ytest = NULL, alpha = NULL, lambda_seq = NULL, n_lambda = 25, maxmin_ratio = 0.2, nfolds = 5, eps = 1e-5, maxiter = 10000, myseed = 1001, prior = TRUE)
+#' @export
+
+
 Apply_MGQDA <- function(Xtrain, Ytrain, Xtest, Ytest = NULL, alpha = NULL, lambda_seq = NULL, n_lambda = 25,  maxmin_ratio = 0.2, nfolds = 5, eps = 1e-5, maxiter = 10000, myseed = 1001, prior = TRUE){
   if (!is.null(alpha)) {
     nl1 = length(alpha)

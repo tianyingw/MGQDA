@@ -1,3 +1,24 @@
+#' Solve_MGQDA_seq Function
+#'
+#' Apply a sequence of lambda values to the Solve_MGQDA function to select the appropriate penalty coefficient lambda.
+#'
+#' @param X An n by p matrix representing the samples, where n is the number of samples, and p is the number of features.
+#'
+#' @param Y A numeric vector of length n, representing the group to which each sample belongs.
+#'
+#' @param alpha The penalty coefficient alpha.
+#'
+#' @param lambda_seq A sequence of lambda values, used to select an appropriate lambda through cross-validation.
+#'
+#' @param eps The tolerance level for iterative convergence.
+#'
+#' @param feature_max The maximum number of features to be selected.
+#'
+#' @param maxiter The maximum number of iterations allowed.
+#'
+#' Solve_MGQDA_seq(X, Y, alpha, lambda_seq, eps = 1e-4, maxiter = 10000, feature_max = nrow(X))
+#' @export
+
 Solve_MGQDA_seq <- function(X, Y, alpha, lambda_seq, eps = 1e-4, maxiter = 10000, feature_max = nrow(X)){
   p = ncol(X)
   G = max(Y)

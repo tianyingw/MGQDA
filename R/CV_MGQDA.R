@@ -1,3 +1,29 @@
+#' CV_MGQDA Function
+#'
+#' Select the optimal penalty coefficient through cross-validation.
+#'
+#' @param X An n by p matrix representing the samples, where n is the number of samples, and p is the number of features.
+#'
+#' @param Y A numeric vector of length n, representing the group to which each sample belongs.
+#'
+#' @param alpha The penalty coefficient alpha.
+#'
+#' @param lambda_seq A sequence of lambda values for cross-validation, used to select an appropriate lambda.
+#'
+#' @param nfolds The number of folds to use for cross-validation.
+#'
+#' @param eps The tolerance level for iterative convergence.
+#'
+#' @param maxiter The maximum number of iterations allowed.
+#'
+#' @param myseed The random seed used for reproducibility.
+#'
+#' @param prior Logical; if TRUE, prior probabilities are used.
+#'
+#' CV_MGQDA(X, Y, alpha, lambda_seq, nfolds = 5, eps = 1e-4, maxiter = 1000, myseed = 1001, prior = TRUE)
+#' @export
+
+
 CV_MGQDA <- function(X, Y, alpha, lambda_seq, nfolds = 5, eps = 1e-4, maxiter = 1000, myseed = 1001, prior = TRUE){
 
   n = length(Y)
@@ -55,3 +81,4 @@ CV_MGQDA <- function(X, Y, alpha, lambda_seq, nfolds = 5, eps = 1e-4, maxiter = 
 
   return (list(lambda_min = lambda_min, lambda_sd = lambda_sd, error_mat = error_mat, cv_sd = cv_sd, sd_vec = sd_vec))
 }
+

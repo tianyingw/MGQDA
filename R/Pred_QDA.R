@@ -1,3 +1,22 @@
+#' Pred_QDA Function
+#'
+#' Perform discriminant analysis on the test set based on the existing data and the projection matrix.
+#'
+#' @param Xtrain An n1 by p matrix representing the training set, where n1 is the number of samples, and p is the number of features.
+#'
+#' @param Ytrain A numeric vector of length n1, representing the group to which each sample in the training set belongs.
+#'
+#' @param Xtest An n2 by p matrix representing the test set, where n2 is the number of samples, and p is the number of features.
+#'
+#' @param Ytest A numeric vector of length n2, representing the group to which each sample in the test set belongs. (Optional)
+#'
+#' @param V The projection matrix.
+#'
+#' @param prior Logical; if TRUE, prior probabilities are used.
+#'
+#' Pred_QDA(Xtrain, Ytrain, Xtest, Ytest = NULL, V = NULL, prior = FALSE)
+#' @export
+
 Pred_QDA <- function(Xtrain, Ytrain, Xtest, Ytest = NULL, V = NULL, prior = FALSE){
   if(!is.null(V)){
     p <- ncol(Xtrain)

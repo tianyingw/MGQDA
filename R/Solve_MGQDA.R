@@ -1,7 +1,27 @@
-### MGQDA by Rcpp
-library(Rcpp)
-library(RcppArmadillo)
-Rcpp::sourceCpp("update_matrix_MGQDA.cpp")
+#' Solve_MGQDA Function
+#'
+#' Apply the block-coordinate descent algorithm and Newton's method to obtain the projection matrix V.
+#'
+#' @param X An n by p matrix representing the samples, where n is the number of samples, and p is the number of features.
+#'
+#' @param Y A numeric vector of length n, representing the group to which each sample belongs.
+#'
+#' @param alpha The penalty coefficient alpha.
+#'
+#' @param lambda The penalty coefficient lambda.
+#'
+#' @param N The number of iterations.
+#'
+#' @param eps The tolerance level for iterative convergence.
+#'
+#' @param maxiter The maximum number of iterations allowed.
+#'
+#' @return Projection matrix V, features number nfeature, iteration times iter.
+#'
+#' @import MASS
+#'
+#' @export
+
 
 Solve_MGQDA<- function(X, Y, alpha, lambda, V = NULL, eps = 1e-4, N = 0, maxiter = 10000){
   if (any(is.na(X))|any(is.na(Y))){
